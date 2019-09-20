@@ -63,10 +63,17 @@ describe("subtract()", async assert => {
 
 describe("multiply()", async assert => {
   assert({
-    given: "two integers, 3 and 2",
+    given: "two positive integers, 3 and 2",
     should: "return 6",
     actual: multiply(3, 2),
     expected: 6
+  });
+
+  assert({
+    given: "two negative integers, -3 and -5",
+    should: "return 15",
+    actual: multiply(-3, -5),
+    expected: 15
   });
 
   assert({
@@ -93,6 +100,20 @@ describe("divide()", async assert => {
   });
 
   assert({
+    given: "two negative integers, -4 and -2",
+    should: "return 2",
+    actual: divide(-4, -2),
+    expected: 2
+  });
+
+  assert({
+    given: "second argument is 0",
+    should: "throw error",
+    actual: Try(divide, 3, 0).toString(),
+    expected: "Error: Cannot divide by zero"
+  });
+
+  assert({
     given: "first argument is non-number",
     should: "throw error",
     actual: Try(divide, null, 3).toString(),
@@ -116,6 +137,20 @@ describe("squareRoot()", async assert => {
   });
 
   assert({
+    given: "one integer, 16",
+    should: "return 4",
+    actual: squareRoot(16),
+    expected: 4
+  });
+
+  assert({
+    given: "argument is negative integer",
+    should: "throw error",
+    actual: Try(squareRoot, -4).toString(),
+    expected: "Error: Cannot have square root of negative number"
+  });
+
+  assert({
     given: "argument is non-number",
     should: "throw error",
     actual: Try(squareRoot, null).toString(),
@@ -129,6 +164,13 @@ describe("exponent()", async assert => {
     should: "return 8",
     actual: exponent(2, 3),
     expected: 8
+  });
+
+  assert({
+    given: "3 to the 2nd power",
+    should: "return 9",
+    actual: exponent(3, 2),
+    expected: 9
   });
 
   assert({

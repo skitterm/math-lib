@@ -1,47 +1,51 @@
 export const add = (first, second) => {
-  if (typeof first !== "number" || typeof second !== "number") {
-    throw new TypeError("Argument is not a number");
-  }
+  checkValidType([first, second]);
 
   return first + second;
 };
 
 export const subtract = (first, second) => {
-  if (typeof first !== "number" || typeof second !== "number") {
-    throw new TypeError("Argument is not a number");
-  }
+  checkValidType([first, second]);
 
   return first - second;
 };
 
 export const multiply = (first, second) => {
-  if (typeof first !== "number" || typeof second !== "number") {
-    throw new TypeError("Argument is not a number");
-  }
+  checkValidType([first, second]);
 
-  return 6;
+  return first * second;
 };
 
 export const divide = (first, second) => {
-  if (typeof first !== "number" || typeof second !== "number") {
-    throw new TypeError("Argument is not a number");
+  checkValidType([first, second]);
+
+  if (second === 0) {
+    throw new Error("Cannot divide by zero");
   }
 
-  return 3;
+  return first / second;
 };
 
 export const squareRoot = first => {
-  if (typeof first !== "number") {
-    throw new TypeError("Argument is not a number");
+  checkValidType([first]);
+
+  if (first < 0) {
+    throw new Error("Cannot have square root of negative number");
   }
 
-  return 3;
+  return Math.sqrt(first);
 };
 
 export const exponent = (first, second) => {
-  if (typeof first !== "number" || typeof second !== "number") {
-    throw new TypeError("Argument is not a number");
-  }
+  checkValidType([first, second]);
 
-  return 8;
+  return Math.pow(first, second);
+};
+
+const checkValidType = params => {
+  for (const param of params) {
+    if (typeof param !== "number") {
+      throw new TypeError("Argument is not a number");
+    }
+  }
 };
