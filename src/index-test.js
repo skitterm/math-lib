@@ -17,6 +17,34 @@ describe("add()", async assert => {
   });
 
   assert({
+    given: "two decimal numbers, 1.5 and 2.25",
+    should: "return 3.75",
+    actual: add(1.5, 2.25),
+    expected: 3.75
+  });
+
+  assert({
+    given: "two binary numbers, 0b11 and 0b10",
+    should: "return 5",
+    actual: add(0b11, 0b10),
+    expected: 5
+  });
+
+  assert({
+    given: "two octal numbers, 0o1 and 0o7",
+    should: "return 8",
+    actual: add(0o1, 0o7),
+    expected: 8
+  });
+
+  assert({
+    given: "two hexadecimal numbers, 0x1 and 0xF",
+    should: "return 16",
+    actual: add(0x1, 0xf),
+    expected: 16
+  });
+
+  assert({
     given: "first argument is non-number",
     should: "throw error",
     actual: Try(add, null, 3).toString(),
@@ -44,6 +72,34 @@ describe("subtract()", async assert => {
     should: "return 2",
     actual: subtract(-3, -5),
     expected: 2
+  });
+
+  assert({
+    given: "two decimals, 2.25 and 1.1",
+    should: "return 1.15",
+    actual: subtract(2.25, 1.1),
+    expected: 1.15
+  });
+
+  assert({
+    given: "two binary numbers, 0b11 and 0b10",
+    should: "return 1",
+    actual: subtract(0b11, 0b10),
+    expected: 1
+  });
+
+  assert({
+    given: "two octal numbers, 0o1 and 0o7",
+    should: "return -6",
+    actual: subtract(0o1, 0o7),
+    expected: -6
+  });
+
+  assert({
+    given: "two hexadecimal numbers, 0x1 and 0xF",
+    should: "return -14",
+    actual: subtract(0x1, 0xf),
+    expected: -14
   });
 
   assert({
@@ -77,6 +133,34 @@ describe("multiply()", async assert => {
   });
 
   assert({
+    given: "two decimals, 2.5 and 2.75",
+    should: "return 6.875",
+    actual: multiply(2.5, 2.75),
+    expected: 6.875
+  });
+
+  assert({
+    given: "two binary numbers, 0b11 and 0b10",
+    should: "return 6",
+    actual: multiply(0b11, 0b10),
+    expected: 6
+  });
+
+  assert({
+    given: "two octal numbers, 0o1 and 0o7",
+    should: "return 7",
+    actual: multiply(0o1, 0o7),
+    expected: 7
+  });
+
+  assert({
+    given: "two hexadecimal numbers, 0x1 and 0xF",
+    should: "return 15",
+    actual: multiply(0x1, 0xf),
+    expected: 15
+  });
+
+  assert({
     given: "first argument is non-number",
     should: "throw error",
     actual: Try(multiply, null, 3).toString(),
@@ -103,6 +187,34 @@ describe("divide()", async assert => {
     given: "two negative integers, -4 and -2",
     should: "return 2",
     actual: divide(-4, -2),
+    expected: 2
+  });
+
+  assert({
+    given: "two decimals, 2.5 and 1.25",
+    should: "return 2",
+    actual: divide(2.5, 1.25),
+    expected: 2
+  });
+
+  assert({
+    given: "two binary numbers, 0b100 and 0b10",
+    should: "return 2",
+    actual: divide(0b100, 0b10),
+    expected: 2
+  });
+
+  assert({
+    given: "two octal numbers, 0o6 and 0o2",
+    should: "return 3",
+    actual: divide(0o6, 0o2),
+    expected: 3
+  });
+
+  assert({
+    given: "two hexadecimal numbers, 0xE and 0x7",
+    should: "return 2",
+    actual: divide(0xe, 0x7),
     expected: 2
   });
 
@@ -144,6 +256,34 @@ describe("squareRoot()", async assert => {
   });
 
   assert({
+    given: "one decimal, 2.25",
+    should: "return 1.5",
+    actual: squareRoot(2.25),
+    expected: 1.5
+  });
+
+  assert({
+    given: "one binary, 0b100",
+    should: "return 2",
+    actual: squareRoot(0b100),
+    expected: 2
+  });
+
+  assert({
+    given: "one octal, 0o4",
+    should: "return 2",
+    actual: squareRoot(0o4),
+    expected: 2
+  });
+
+  assert({
+    given: "one hexadecimal, 0x10",
+    should: "return 4",
+    actual: squareRoot(0x10),
+    expected: 4
+  });
+
+  assert({
     given: "argument is negative integer",
     should: "throw error",
     actual: Try(squareRoot, -4).toString(),
@@ -174,6 +314,34 @@ describe("exponent()", async assert => {
   });
 
   assert({
+    given: "2.5 to the 2nd power",
+    should: "return 6.25",
+    actual: exponent(2.5, 2),
+    expected: 6.25
+  });
+
+  assert({
+    given: "binary -- 0b11 to the 0b10 power",
+    should: "return 9",
+    actual: exponent(0b11, 0b10),
+    expected: 9
+  });
+
+  assert({
+    given: "octal -- 0o7 to the 0o2 power",
+    should: "return 49",
+    actual: exponent(0o7, 0o2),
+    expected: 49
+  });
+
+  assert({
+    given: "hexadecimal -- 0x4 to the 0x2 power",
+    should: "return 16",
+    actual: exponent(0x4, 0x2),
+    expected: 16
+  });
+
+  assert({
     given: "first argument is non-number",
     should: "throw error",
     actual: Try(exponent, null, 3).toString(),
@@ -187,7 +355,3 @@ describe("exponent()", async assert => {
     expected: "TypeError: Argument is not a number"
   });
 });
-
-/*
-TODO:
-*/
