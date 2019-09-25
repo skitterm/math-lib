@@ -1,5 +1,13 @@
 import { describe, Try } from "riteway";
-import { add, subtract, multiply, divide, squareRoot, exponent } from ".";
+import {
+  add,
+  subtract,
+  multiply,
+  divide,
+  squareRoot,
+  exponent,
+  toDecimal
+} from ".";
 
 describe("add()", async assert => {
   assert({
@@ -353,5 +361,35 @@ describe("exponent()", async assert => {
     should: "throw error",
     actual: Try(exponent, 3).toString(),
     expected: "TypeError: Argument is not a number"
+  });
+
+  describe("toDecimal()", async assert => {
+    assert({
+      given: "a binary number",
+      should: "return in decimal form",
+      actual: toDecimal(0b111),
+      expected: 7
+    });
+
+    assert({
+      given: "an octal number",
+      should: "return in decimal form",
+      actual: toDecimal(0o7),
+      expected: 7
+    });
+
+    assert({
+      given: "a hexadecimal number",
+      should: "return in decimal form",
+      actual: toDecimal(0xa),
+      expected: 10
+    });
+
+    assert({
+      given: "a non-number",
+      should: "throw error",
+      actual: Try(toDecimal, null).toString(),
+      expected: "TypeError: Argument is not a number"
+    });
   });
 });

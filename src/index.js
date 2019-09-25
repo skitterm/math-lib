@@ -42,6 +42,12 @@ export const exponent = (first, second) => {
   return Math.pow(first, second);
 };
 
+export const toDecimal = num => {
+  checkValidType([num]);
+
+  return parseInt(num, 10);
+};
+
 const checkValidType = params => {
   for (const param of params) {
     if (typeof param !== "number") {
