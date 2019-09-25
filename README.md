@@ -1,6 +1,6 @@
 # math-lib
 
-A set of reusable arithmetic functions. All functions handle numbers in decimal, binary, octal, and hexidecimal formats, returning the result in decimal form.
+A set of reusable arithmetic functions. All functions handle numbers in decimal, binary, octal, and hexadecimal formats, returning the result in decimal form.
 
 ## Basic Usage (browser)
 
@@ -28,4 +28,4 @@ To run the tests, run `npm run test`. Alternatively, run `npm run watch` to have
 
 ## Reusability Measures
 
-The functions each verify that a valid number (argument with JavaScript `number` type) is passed for each argument. They also handle a wide variety of number formats -- decimal, binary, octal, and hexidecimal.
+The functions each verify that a valid number (argument with JavaScript `number` type) is passed for each argument. They also handle a wide variety of number formats -- decimal, binary, octal, and hexadecimal.
