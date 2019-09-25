@@ -22,7 +22,9 @@ All functions require parameters to be of JavaScript type `number`, and either r
 
 ## Tests
 
-Unit tests were created leveraging Eric Elliott's [`riteway`](https://github.com/ericelliott/riteway) test environment. To run the tests, run `npm run test`. Alternatively, run `npm run watch` to have the tests run each time a change to the JavaScript files occurs.
+Unit tests were created leveraging Eric Elliott's [`riteway`](https://github.com/ericelliott/riteway) test environment. Run `npm install` at the project root to install the environment.
+
+To run the tests, run `npm run test`. Alternatively, run `npm run watch` to have the tests run each time a change to the JavaScript files occurs.
 
 ## Reusability Measures
 
